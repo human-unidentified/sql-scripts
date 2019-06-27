@@ -1,15 +1,15 @@
-/*Получение всех новых объектов в справочных таблицах*/
+/*РџРѕР»СѓС‡РµРЅРёРµ РІСЃРµС… РЅРѕРІС‹С… РѕР±СЉРµРєС‚РѕРІ РІ СЃРїСЂР°РІРѕС‡РЅС‹С… С‚Р°Р±Р»РёС†Р°С…*/
 use TFlexDOCs_sql2017
 
 CREATE TABLE #processedTables ( tableName NVARCHAR(255) )
 
--- получение всех таблиц в которых есть поле s_CreationDate
+-- РїРѕР»СѓС‡РµРЅРёРµ РІСЃРµС… С‚Р°Р±Р»РёС† РІ РєРѕС‚РѕСЂС‹С… РµСЃС‚СЊ РїРѕР»Рµ s_CreationDate
 INSERT INTO #processedTables
 SELECT DISTINCT (sch_col.TABLE_NAME) AS tableName
 FROM INFORMATION_SCHEMA.COLUMNS sch_col
 WHERE sch_col.COLUMN_NAME = 's_CreationDate'
 
-DECLARE @dateFrom varchar(255) = '2019-06-25 12:50:22.000' -- Дата\время начиная с которой проверяются созданные объекты
+DECLARE @dateFrom varchar(255) = '2019-06-25 12:50:22.000' -- Р”Р°С‚Р°\РІСЂРµРјСЏ РЅР°С‡РёРЅР°СЏ СЃ РєРѕС‚РѕСЂРѕР№ РїСЂРѕРІРµСЂСЏСЋС‚СЃСЏ СЃРѕР·РґР°РЅРЅС‹Рµ РѕР±СЉРµРєС‚С‹
 DECLARE @tableName varchar(255)
 DECLARE @tableNameCursor CURSOR;
 
