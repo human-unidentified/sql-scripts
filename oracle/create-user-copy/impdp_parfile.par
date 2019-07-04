@@ -1,0 +1,4 @@
+DIRECTORY=ORACLE_BASE
+DUMPFILE=backup_2019.07.04.dmp
+LOGFILE=backup_2019.07.04.log
+SCHEMAS=(source-user)

@@ -1,0 +1,1 @@
+impdp system/system-password@localhost:1521/servicename.domain.ru PARFILE=impdp_parfile.par FROMUSER=source-user TOUSER=destination-user
